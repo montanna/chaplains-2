@@ -71,6 +71,9 @@ body {
     margin-left: 12.51vw;
 }
 
+
+/* Sections */
+
 .section1 {
     background: url('../images/Downtown-Blue-Original.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -98,14 +101,21 @@ body {
     height: 120vh;
 }
 
+.section6 {
+    position: relative;
+}
+
 h4 {
     text-align: center;
 }
 
+
+/* Landing page */
+
 .home-title-container {
     margin-top: 20px;
     text-align: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
     opacity: 0;
 }
 
@@ -142,6 +152,9 @@ h4 {
 #scrollButton:hover {
     opacity: 0.3;
 }
+
+
+/*Outreach page*/
 
 #ministriesCarousel {
     height: 60vh;
@@ -209,6 +222,9 @@ a:hover {
     color: #111;
 }
 
+
+/*Navbar styling*/
+
 .navbar-trans {
     height: 0px;
     color: #fff;
@@ -226,6 +242,12 @@ a:hover {
     background-color: #041f26;
 }
 
+.logo-sm {
+    height: 25px!important;
+    margin-right: 20px;
+    .ease;
+}
+
 .transparent {
     /*background: rgba(0, 0, 0, 0.1);*/
     .navSolid;
@@ -233,6 +255,9 @@ a:hover {
     & > div > div > .nav > li > a {
         height: 90px!important;
         line-height: 59px;
+    }
+    & > div > div > .navbar-brand > img.logo-sm {
+        height: 45px!important;
     }
 }
 
@@ -245,7 +270,8 @@ a:hover {
 
 /*Nav bar links*/
 
-.navbar-trans > li > a {
+.navbar-trans > li > a,
+.nav > li > a {
     color: #fff;
     padding-left: 10px;
     padding-right: 10px;
@@ -579,6 +605,54 @@ form {
 #facebookButton {
     background-color: @facebookBlue;
     width: 100%;
+}
+
+
+/*Get involved page styling*/
+
+#involvementTitle {
+    position: relative;
+    top: 10vh!important;
+}
+
+.involvementContainer {
+    margin-top: 5vh;
+}
+
+.involvementContentBox {
+    padding: 18px;
+    height: 55vh;
+    margin: 10px;
+}
+
+.involvementContentBox > p {
+    margin-top: 30px;
+}
+
+.buttonContainer {
+    padding-top: 20px;
+}
+
+.involvementContentText {
+    height: 40vh;
+    overflow-y: auto;
+}
+
+form {
+    width: 50%;
+}
+
+input {
+    margin-left: 0!important;
+    padding-left: 6px;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+}
+
+#submit {
+    margin-top: 50px;
+    margin-right: 30px;
 }
 
 
