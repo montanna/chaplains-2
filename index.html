@@ -225,7 +225,7 @@
                         <span class="glyphicon glyphicon-chevron-right pull-right galleryRight"></span>
                     </div>
                 </div>
-                <div class="galleryThumbsRow row" data-bind="foreach: $root.selectedAlbum().albumimages()">
+                <div class="galleryThumbsRow row" data-bind="foreach: $root.selectedAlbum().albumImages()">
                     <div class="galleryImg col-sm-1" data-bind="style: {'backgroundImage': 'url('+ imgPath() +')'}, click: function(data,event){$root.imgClicked(data,event)}"></div>
                 </div>
             </div>
