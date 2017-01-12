@@ -30,6 +30,9 @@ body {
 
 .wt {
     color: #fff!important;
+    & > a {
+        color: #fff!important;
+    }
 }
 
 .bitter {
@@ -105,10 +108,6 @@ body {
     position: relative;
 }
 
-h4 {
-    text-align: center;
-}
-
 
 /* Landing page */
 
@@ -158,6 +157,8 @@ h4 {
 
 #ministriesCarousel {
     height: 60vh;
+    background-size: cover!important;
+    margin-top: -70px;
 }
 
 .carousel-inner .item {
@@ -166,6 +167,17 @@ h4 {
 
 .carousel-indicators li {
     background-color: #e3e3e3;
+}
+
+
+/*Universal styles*/
+
+h4 {
+    text-align: center;
+}
+
+video {
+    background: #000;
 }
 
 
@@ -212,10 +224,6 @@ hr {
 
 .buttonShadow {
     box-shadow: 0px 4px 0px #285e8e;
-}
-
-a {
-    color: #999;
 }
 
 a:hover {
@@ -354,6 +362,7 @@ section {
 .about-us-top-p {
     font-size: 16px !important;
     text-align: center;
+    margin: 20px;
 }
 
 .middle-container {
@@ -407,10 +416,6 @@ section {
     margin-top: 10vh;
     margin-left: auto;
     margin-right: auto;
-}
-
-#videoExpand {
-    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #video-container {
@@ -812,14 +817,6 @@ img.col6 {
     display: none;
 }
 
-#ministriesCarousel {
-    height: 50vh;
-    background-color: #000;
-    margin-top: -5vh;
-    background-size: 100% auto!important;
-    background-blend-mode: luminosity;
-}
-
 .carouselCaption {
     text-align: center;
     padding-top: 70px;
@@ -856,7 +853,15 @@ img.col6 {
 #ministriesLinks {
     display: flex;
     flex-wrap: nowrap;
+    align-items: flex-end;
     width: 100%;
+    height: 60px;
+    margin-top: -30px;
+}
+
+.selectedTab {
+    align-self: flex-start;
+    height: 60px;
 }
 
 .ministriesLink {
@@ -871,6 +876,9 @@ img.col6 {
 .stealthLink {
     background-color: @stealthRed !important;
     flex-grow: 1.6;
+    &.popUpHeaderBar {
+        box-shadow: -40px 40px 150px @stealthRed;
+    }
 }
 
 .stealthBtn {
@@ -895,19 +903,31 @@ img.col6 {
 
 .deptLink {
     background-color: @deptBlue !important;
+    &.popUpHeaderBar {
+        box-shadow: -40px 40px 150px @deptBlue;
+    }
 }
 
 .commLink {
     background-color: @commGold !important;
+    &.popUpHeaderBar {
+        box-shadow: -40px 40px 150px @commGold;
+    }
 }
 
 .riseLink {
     background-color: @riseViolet !important;
     flex-grow: 1.4;
+    &.popUpHeaderBar {
+        box-shadow: -40px 40px 150px @riseViolet;
+    }
 }
 
 .blueLink {
     background-color: darken(@deptBlue, 20%) !important;
+    &.popUpHeaderBar {
+        box-shadow: -40px 40px 150px @riseViolet;
+    }
 }
 
 .carousel-caption {
@@ -1155,8 +1175,9 @@ img.col6 {
     }
     video {
         width: 50%;
-        margin-left: 25%;
         max-width: 780px;
+        height: 320px;
+        margin-top: 15px;
     }
 }
 

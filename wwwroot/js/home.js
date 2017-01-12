@@ -48,7 +48,6 @@ function LoginViewModel() {
     }
 }
 
-
 //Outreach tabs
 function TabViewModel() {
     var self = this;
@@ -124,7 +123,7 @@ function TabViewModel() {
         tabStyle: "deptLink ",
         tabTitle: "Patrol Chaplains",
         tabCaption: "",
-        tabImg: "wwwroot/images/people2.jpg",
+        tabImg: "wwwroot/images/laura1.jpg",
         pathToImage: "wwwroot/images/mockupPC.jpg",
         pathToPDF: "wwwroot/docs/patrol chaplains brochure.pdf",
         tabContentHeader: "Patrol Chaplains",
@@ -140,7 +139,7 @@ function TabViewModel() {
         tabStyle: "commLink ",
         tabTitle: "Zone Ministry",
         tabCaption: "",
-        tabImg: "wwwroot/images/people2.jpg",
+        tabImg: "wwwroot/images/church2.jpeg",
         pathToImage: "",
         tabContentHeader: "Zone Ministry",
         tabContentBody: "Want to impact your neighborhood? Zone ministry partners your church with the Fresno Police Department to respond to those in your immediate community who are in need of support.",
@@ -153,7 +152,7 @@ function TabViewModel() {
     self.tabs.push({
         tabId: 5,
         tabStyle: "blueLink ",
-        tabTitle: "Support Blue",
+        tabTitle: "<a href='http://supportbluefresno.com' target='_blank'>Support Blue</a>",
         tabCaption: "",
         tabImg: "wwwroot/images/supportblue.jpg",
         pathToImage: "wwwroot/images/supportblue.jpg",
@@ -239,6 +238,13 @@ function TabViewModel() {
     };
 
     self.tabClicked = function() {
+        var that = event.target;
+        if ($(that).hasClass("blueLink")) {
+            window.open("http://supportbluefresno.com");
+        }
+        $(".selectedTab").removeClass("selectedTab");
+        $(that).addClass("selectedTab");
+
         if ($(window).width() <= 768) {
             $("html,body").animate({
                 scrollTop: $("#projectInfo").offset().top
@@ -247,7 +253,6 @@ function TabViewModel() {
         }
     }
 }
-
 
 //Gallery
 var album = function(item) {
@@ -332,18 +337,6 @@ function GalleryViewModel() {
 
     })
 }
-
-//About
-function AboutViewModel() {
-    var self = this;
-
-    self.goals = ko.observableArray([]);
-    self.goals.push("Bullet points are an effective strategy for separating ideas");
-    self.goals.push("We can use them on this page to show how the chaplaincy is helping our community");
-    self.goals.push("Isnt this fun!?");
-    self.goals.push("Bullet points!!");
-}
-
 
 //Get involved cards
 function InvolvementViewModel() {
@@ -588,22 +581,6 @@ function initControls() {
         $("#involvementBtn").addClass("active");
     });
 
-    $(".learn-more-button").on("click", function() {
-        $(".expand-about").css("display", "block");
-        $("#about").css("height", "190vh");
-        $("html,body").animate({
-            scrollTop: $("#videoExpand").offset().top - 50
-        }, 800);
-    });
-
-    $(".close-video-button").on("click", function() {
-        $("html,body").animate({
-            scrollTop: $("#about").offset().top - 50
-        }, 800);
-        $(".active").removeClass("active");
-        $("#aboutBtn").addClass("active");
-    });
-
     $(".involvementApplyBTN").on("click", function() {
         $(".involvementPopUp").show();
         $(".PopUpBkg").show();
@@ -689,10 +666,6 @@ function initControls() {
         } else if (height < $("#gallery").offset().top - 100) {
             $(".active").removeClass("active");
             $("#aboutBtn").addClass("active");
-            $("#goalsContainer").addClass("animated slideInLeft");
-            $("#goalsContainer").show();
-            $(".mission-container").addClass("animated slideInRight");
-            $(".mission-container").delay(300).show();
 
         } else if (height < $("#involvement").offset().top - 100) {
             $(".active").removeClass("active");
@@ -734,8 +707,6 @@ $(document).ready(function() {
     ko.applyBindings(tabVM, $("#ministries")[0]);
     var galleryVM = new GalleryViewModel();
     ko.applyBindings(galleryVM, $("#gallery")[0]);
-    var aboutVM = new AboutViewModel();
-    ko.applyBindings(aboutVM, $("#goalsContainer")[0]);
     var involvementVM = new InvolvementViewModel();
     ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
     var eventsVM = new EventsViewModel();

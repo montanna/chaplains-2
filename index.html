@@ -107,13 +107,14 @@
     </section>
     <!--outreach page (formerly ministries)-->
     <section class="page-section section2" id="ministries">
+        <!--Image carousel-->
         <div class="row">
             <div class="row sectionHeader" id="ministriesTitle">
                 <p>Outreach</p>
             </div>
             <div style="background: #000">
                 <div id="ministriesCarousel" data-bind="style: {background:'rgb(0,0,0) url(' + $root.selectedTab().tabImg + ') center top no-repeat'}">
-                    <h1 class="carouselCaption" data-bind="html: $root.selectedTab().tabTitle"></h1>
+                    <h1 class="carouselCaption wt" data-bind="html: $root.selectedTab().tabTitle"></h1>
                     <h3 class="carouselCaption  carouselCaption2" data-bind="html: $root.selectedTab().tabCaption"></h3>
                 </div>
             </div>
@@ -121,31 +122,14 @@
         <div id="ministriesContainer">
             <div class="row">
                 <div id="ministriesLinks" role="tablist" data-bind="foreach: $root.tabs">
-                    <div class="ministriesLink" data-bind="text:tabTitle, css: tabStyle,  click: function(data,event) { $root.selectTab(data,event); $root.tabClicked();}">
+                    <div class="ministriesLink wt" data-bind="html:tabTitle, css: tabStyle,  click: function(data,event) { $root.selectTab(data,event); $root.tabClicked();}">
                     </div>
                 </div>
             </div>
-            <!-- Tab panes -->
-            <!--
-            <div class="row tabContentContainer">
-                <div id="tabContentHeader" class="text-center" data-bind="html:$root.selectedTab().tabContentHeader"> </div>
-                <div id="tabContent" class="text-center">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5">&nbsp;</div>
-                <div class="col-sm-2 text-center">
-                    <div class="btn btn-lg btn-primary buttonShadow" id="ministriesReadButton" data-bind="click" role="button">
-                        Learn More
-                    </div>
-                    <div class="ministries-hidden" data-bind="click: function(data,event) { showBrochure(data,event) }"></div>
-                </div>
-            </div>
-            -->
             <div class="PopUpBkg">
                 <div class="popUp">
                     <div class="popUpHeaderBar">
-                        <span class="popUpHeader " data-bind="html:$root.selectedTab().tabContentHeader"></span>
+                        <span class="popUpHeader wt" data-bind="html:$root.selectedTab().tabContentHeader"></span>
                         <span class="popUpCloseBTN glyphicon glyphicon-remove-circle pull-right" id="ministriesPopUpClose" data-bind="click: function(data,event) { closePopUp(data,event)}"></span>
                     </div>
                     <div class="text-center popUpContent">
@@ -189,22 +173,8 @@
         <div class="about-us-container">
             <p class="sectionHeader">About Us</p>
             <p class="about-us-top-p">The Fresno Policy Chaplaincy is a non-profit organization partnering with law enforcement to bring hope to our community.</p>
-            <div class="row middle-container">
-                <div class="col-sm-6 aboutAnimated" id="goalsContainer">
-                    <h3 id="goals-header">Our Goals</h3>
-                    <ul id="goals-list" data-bind="foreach: goals">
-                        <li data-bind="text: $data"></li>
-                    </ul>
-                </div>
-                <div class="col-sm-6 mission-container aboutAnimated">
-                    <h3 id="mission-header">Our Mission</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
-                </div>
-            </div>
             <div class="row">
-                <video controls src="" width="300" height="200">
+                <video controls src="" width="300" height="200" style="margin-left: 25%;">
                     <source />
                 </video>
             </div>

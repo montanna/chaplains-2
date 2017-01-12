@@ -9,6 +9,9 @@ body {
 .wt {
   color: #fff!important;
 }
+.wt > a {
+  color: #fff!important;
+}
 .bitter {
   font-family: "Bitter";
 }
@@ -67,9 +70,6 @@ body {
 .section6 {
   position: relative;
 }
-h4 {
-  text-align: center;
-}
 /* Landing page */
 .home-title-container {
   margin-top: 20px;
@@ -110,12 +110,21 @@ h4 {
 /*Outreach page*/
 #ministriesCarousel {
   height: 60vh;
+  background-size: cover!important;
+  margin-top: -70px;
 }
 .carousel-inner .item {
   height: 60vh;
 }
 .carousel-indicators li {
   background-color: #e3e3e3;
+}
+/*Universal styles*/
+h4 {
+  text-align: center;
+}
+video {
+  background: #000;
 }
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -151,9 +160,6 @@ hr {
 }
 .buttonShadow {
   box-shadow: 0px 4px 0px #285e8e;
-}
-a {
-  color: #999;
 }
 a:hover {
   color: #111;
@@ -273,6 +279,7 @@ section {
 .about-us-top-p {
   font-size: 16px !important;
   text-align: center;
+  margin: 20px;
 }
 .middle-container {
   margin: 0 auto;
@@ -315,9 +322,6 @@ section {
   margin-top: 10vh;
   margin-left: auto;
   margin-right: auto;
-}
-#videoExpand {
-  background-color: rgba(255, 255, 255, 0.4);
 }
 #video-container {
   position: fixed;
@@ -639,13 +643,6 @@ img.col6 {
 #ministriesTitle {
   display: none;
 }
-#ministriesCarousel {
-  height: 50vh;
-  background-color: #000;
-  margin-top: -5vh;
-  background-size: 100% auto!important;
-  background-blend-mode: luminosity;
-}
 .carouselCaption {
   text-align: center;
   padding-top: 70px;
@@ -676,7 +673,14 @@ img.col6 {
 #ministriesLinks {
   display: flex;
   flex-wrap: nowrap;
+  align-items: flex-end;
   width: 100%;
+  height: 60px;
+  margin-top: -30px;
+}
+.selectedTab {
+  align-self: flex-start;
+  height: 60px;
 }
 .ministriesLink {
   padding: 10px;
@@ -689,6 +693,9 @@ img.col6 {
 .stealthLink {
   background-color: #E24743 !important;
   flex-grow: 1.6;
+}
+.stealthLink.popUpHeaderBar {
+  box-shadow: -40px 40px 150px #E24743;
 }
 .stealthBtn {
   box-shadow: 0px 4px 0px #bc211d;
@@ -709,15 +716,27 @@ img.col6 {
 .deptLink {
   background-color: #355C95 !important;
 }
+.deptLink.popUpHeaderBar {
+  box-shadow: -40px 40px 150px #355C95;
+}
 .commLink {
   background-color: #E28C43 !important;
+}
+.commLink.popUpHeaderBar {
+  box-shadow: -40px 40px 150px #E28C43;
 }
 .riseLink {
   background-color: #6F3398 !important;
   flex-grow: 1.4;
 }
+.riseLink.popUpHeaderBar {
+  box-shadow: -40px 40px 150px #6F3398;
+}
 .blueLink {
   background-color: #1a2e4a !important;
+}
+.blueLink.popUpHeaderBar {
+  box-shadow: -40px 40px 150px #6F3398;
 }
 .carousel-caption {
   position: absolute;
@@ -923,8 +942,9 @@ img.col6 {
   }
   video {
     width: 50%;
-    margin-left: 25%;
     max-width: 780px;
+    height: 320px;
+    margin-top: 15px;
   }
 }
 /*For smaller screens / mobile */
