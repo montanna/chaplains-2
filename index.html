@@ -1,0 +1,399 @@
+<!-- css files specifically for use by this page -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--lib stylesheets-->
+    <link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="wwwroot/lib/bootstrap-touch-carousel/dist/css/bootstrap-touch-carousel.css" />
+    <link rel="stylesheet" href="wwwroot/lib/bootstrap-touch-carousel/dist/css/bootstrap-touch-carousel.css" />
+    <link href='https://fonts.googleapis.com/css?family=Bitter|Montserrat|PT+Sans' rel='stylesheet' type='text/css'>
+    <link href="wwwroot/lib/animate-css/animate.css" rel="stylesheet" />
+    <!--site stylesheets-->
+    <link rel="stylesheet" type="text/css" href="wwwroot/less/site.less.css" />
+    <link rel="stylesheet" type="text/css" href="wwwroot/less/involvement.less.css" />
+</head>
+
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-trans navbar-fixed-top transparent" style="height: 50px;" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="wwwroot/Images/badge-white.png" class="logo-sm" style="height:45px !important; margin-right:20px;" /></a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapsible">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a id="homeBtn" class="active">Home</a></li>
+                    <li><a id="ministriesBtn">What We Do</a></li>
+                    <li><a id="aboutBtn">Who We Are</a></li>
+                    <li><a id="galleryBtn">Photos</a></li>
+                    <li><a id="involvementBtn">Get Involved</a></li>
+                    <li><a id="newsBtn">News &amp; Events</a></li>
+                    <li><a id="contactBtn">Contact Us</a></li>
+                    <li><a id="donateBtn">Donate</a></li>
+                    <li><a id="shopBtn" href="https://squareup.com/store/fresno-police-chaplaincy-support-blue" target="_blank">Shop</a></li>
+                    <li>&nbsp;</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right: 0px!important;">
+                    <li>
+                        <a data-bind="click: signInHandler" id="sign-in-link">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--login section-->
+    <section class="page-section login-section" id="loginSection">
+        <div class="container-fluid login-container vertical-center">
+            <div>
+                <div class="row login-row login-row-top">
+                    <p>Log In</p>
+                    <div data-bind="click: closeLoginSection" id="exit-login" class="glyphicon glyphicon-remove login-exit"></div>
+                </div>
+            </div>
+            <div>
+                <div class="row login-form-container col-sm-6">
+                    <form class="form-signin" id="login-form">
+                        <label for="inputEmail" class="sr-only">Email Address</label>
+                        <input data-bind="value: email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input data-bind="value: password" type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus />
+                        <div class="checkbox">
+                            <label>
+                                <input id="checkbox-input" type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button data-bind="click: loginUser" type="submit" class="sign-in-button btn btn-lg btn-primary btn-block">Sign in</button>
+                    </form>
+                </div>
+                <div class="row col-sm-6">
+                    <div class="social-buttons">
+                        <div class="row btn btn-lg btn-primary social-button" id="googleButton" data-bind="click" role="button">
+                            Google
+                        </div>
+                        <div class="row btn btn-lg btn-primary social-button" id="microsoftButton" data-bind="click" role="button">
+                            Microsoft
+                        </div>
+                        <div class="row btn btn-lg btn-primary social-button" id="facebookButton" data-bind="click" role="button">
+                            Facebook
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row forgot-password-div">
+            </div>
+        </div>
+    </section>
+    <!--landing page-->
+    <section class="page-section section1" id="home">
+        <div class="text-center home-title-container animated">
+            <img src="wwwroot/images/chaplaincy-logo-white.png" />
+            <h1 class="wt bitter">Fresno Police Chaplaincy</h1>
+        </div>
+        <div class="animatedLabelContainer">
+            <h4 class="mont">
+                <span class="animated label1">Connecting the at-risk </span>
+                <span class="animated label2">with those willing to risk.</span>
+            </h4>
+        </div>
+        <div class="animated" id="scroll-button-row">
+            <img id="scrollButton" src="wwwroot/Images/arrow-icon2.png" />
+        </div>
+    </section>
+    <!--outreach page (formerly ministries)-->
+    <section class="page-section section2" id="ministries">
+        <div class="row">
+            <div class="row sectionHeader" id="ministriesTitle">
+                <p>Outreach</p>
+            </div>
+            <div style="background: #000">
+                <div id="ministriesCarousel" data-bind="style: {background:'rgb(0,0,0) url(' + $root.selectedTab().tabImg + ') center top no-repeat'}">
+                    <h1 class="carouselCaption" data-bind="html: $root.selectedTab().tabTitle"></h1>
+                    <h3 class="carouselCaption  carouselCaption2" data-bind="html: $root.selectedTab().tabCaption"></h3>
+                </div>
+            </div>
+        </div>
+        <div id="ministriesContainer">
+            <div class="row">
+                <div id="ministriesLinks" role="tablist" data-bind="foreach: $root.tabs">
+                    <div class="ministriesLink" data-bind="text:tabTitle, css: tabStyle,  click: function(data,event) { $root.selectTab(data,event); $root.tabClicked();}">
+                    </div>
+                </div>
+            </div>
+            <!-- Tab panes -->
+            <!--
+            <div class="row tabContentContainer">
+                <div id="tabContentHeader" class="text-center" data-bind="html:$root.selectedTab().tabContentHeader"> </div>
+                <div id="tabContent" class="text-center">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">&nbsp;</div>
+                <div class="col-sm-2 text-center">
+                    <div class="btn btn-lg btn-primary buttonShadow" id="ministriesReadButton" data-bind="click" role="button">
+                        Learn More
+                    </div>
+                    <div class="ministries-hidden" data-bind="click: function(data,event) { showBrochure(data,event) }"></div>
+                </div>
+            </div>
+            -->
+            <div class="PopUpBkg">
+                <div class="popUp">
+                    <div class="popUpHeaderBar">
+                        <span class="popUpHeader " data-bind="html:$root.selectedTab().tabContentHeader"></span>
+                        <span class="popUpCloseBTN glyphicon glyphicon-remove-circle pull-right" id="ministriesPopUpClose" data-bind="click: function(data,event) { closePopUp(data,event)}"></span>
+                    </div>
+                    <div class="text-center popUpContent">
+                        <div class="row">
+                            <img class="ministriesBrochureImg" src="" alt="brochure image" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="ministriesBrochureNav" id="leftArrowBtn" data-bind="click: function(data,event) { scrollBrochureL(data,event)}">
+                                <img src="wwwroot/images/arrow-left.png" alt="left arrow" />
+                            </div>
+                            <a class="ministriesBrochureLink" style="padding-top: 20px;" href="" target="_blank">Download PDF</a>
+                            <div class="ministriesBrochureNav" id="rightArrowBtn" data-bind="click: function(data,event) { scrollBrochureR(data,event)}">
+                                <img src="wwwroot/images/arrow-right.png" alt="right arrow" />
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ministriesInfo" id="projectInfo">
+                    <div class="popUpHeaderBar whiteText" data-bind="css:$root.selectedTab().tabStyle">
+                        <span class="popUpHeader" data-bind="html:$root.selectedTab().tabContentHeader"></span>
+                        <p data-bind="html:$root.selectedTab().tabContentBody"></p>
+                    </div>
+                    <div class="">
+                        <div class="text-center" data-bind="visible:$root.selectedTab().hasVideo, html:$root.selectedTab().video"></div>
+                        <div class="popUpContent" data-bind="html:$root.selectedTab().tabContentBodyExt"></div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="btn btn-lg btn-primary buttonShadow" id="ministriesBrowseBtn" data-bind="text:$root.selectedTab().btnText"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    </section>
+    <!--about section-->
+    <section class="page-section section3" id="about">
+        <div class="about-us-container">
+            <p class="sectionHeader">About Us</p>
+            <p class="about-us-top-p">The Fresno Policy Chaplaincy is a non-profit organization partnering with law enforcement to bring hope to our community.</p>
+            <div class="row middle-container">
+                <div class="col-sm-6 aboutAnimated" id="goalsContainer">
+                    <h3 id="goals-header">Our Goals</h3>
+                    <ul id="goals-list" data-bind="foreach: goals">
+                        <li data-bind="text: $data"></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 mission-container aboutAnimated">
+                    <h3 id="mission-header">Our Mission</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <video controls src="" width="300" height="200">
+                    <source />
+                </video>
+            </div>
+        </div>
+    </section>
+    <!--gallery section-->
+    <section class="page-section section3b" id="gallery">
+        <div class="row sectionHeader">
+            <p>Gallery</p>
+            <h4 class="involvementSubtitle"></h4>
+            <div id="gallery">
+                <div class="galleryAlbums row" data-bind="foreach: $root.albums">
+                    <div class="galleryAlbum" data-bind="style: {backgroundColor: albumColor}, text: albumTitle"></div>
+                </div>
+                <div class="galleryImgMain row" data-bind="style: {'backgroundImage': 'url('+ $root.mainImg() +')'}, click:function(data,event){ $root.mainImgClicked(data,event)}">
+                    <div class="galleryNav">
+                        <span class="glyphicon glyphicon-chevron-left pull-left galleryLeft"></span>
+                        <span class="glyphicon glyphicon-chevron-right pull-right galleryRight"></span>
+                    </div>
+                </div>
+                <div class="galleryThumbsRow row" data-bind="foreach: $root.selectedAlbum().albumImages()">
+                    <div class="galleryImg col-sm-1" data-bind="style: {'backgroundImage': 'url('+ imgPath() +')'}, click: function(data,event){$root.imgClicked(data,event)}"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--get involved secttion-->
+    <section class="page-section section4" id="involvement">
+        <div class="row sectionHeader whiteText txtShadow">
+            <p>Get Involved</p>
+            <h4 class="involvementSubtitle"></h4>
+        </div>
+        <div id="involvementContainer">
+            <div class="row" data-bind="foreach: $root.cards">
+                <div class="col-sm-3">
+                    <div class="involvementContentBox well">
+                        <div class="row involvementContentText">
+                            <h4 class="involvementBoxHeader" data-bind="text: cardTitle"> </h4>
+                            <p data-bind="text: cardTagline"></p>
+                            <ul data-bind="html: cardDescription"> </ul>
+                        </div>
+                        <div class="row text-center">
+                            <div class="btn btn-lg btn-primary involvementApplyBTN buttonShadow" data-bind="css: cardColor"> Apply Now </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="PopUpBkg">
+                <div class="popUp">
+                    <div class="popUpHeaderBar">
+                        <span class="popUpHeader">Volunteer Application</span>
+                        <span class="popUpCloseBTN glyphicon glyphicon-remove-circle pull-right" id="involvementPopUpClose" data-bind="click: function(data,event) { closePopUp2(data,event)}"></span>
+                    </div>
+                    <div class="popUpContent">
+                        <div class="form">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputFirst">* First name</label>
+                                    <input type="text" class="form-control" data-bind="value: firstName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputLast">* Last name</label>
+                                    <input type="text" class="form-control" data-bind="value: lastName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail">Email address</label>
+                                    <input type="text" class="form-control" data-bind="value: email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPhone">* Phone number</label>
+                                    <input type="text" class="form-control" data-bind="value: phone">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" data-bind="value: address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCity">* City</label>
+                                    <!--add dropdown / autocomplete-->
+                                    <input type="text" class="form-control" data-bind="value: city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputState">* State</label>
+                                    <!--add dropdown / autocomplete-->
+                                    <input type="text" class="form-control" data-bind="value: state">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputChurch">* Church affiliation</label>
+                                    <input type="text" class="form-control" data-bind="value: church">
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button id="submit" class="btn btn-lg btn-primary submitBtn buttonShadow pull-right" data-bind="click: function(data,event) {$root.onSubmit(data,event)}">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--news section-->
+    <section class="page-section section5" id="news">
+        <div class="row title-container sectionHeader">
+            <p>News &amp; Events</p>
+        </div>
+        <div class="row event-banner">
+            <p>Purchase Granville Tickets Now!</p>
+        </div>
+        <div class="news-events-container" id="events">
+            <div class="col-sm-6 events">
+                <ul class="events-list" data-bind="foreach: events">
+                    <li>
+                        <div class="row event-type">
+                            <span data-bind="text: eventType"></span> <span data-bind="text: eventDate"></span>
+                        </div>
+                        <div class="col-sm-4 event-image-container">
+                            <div class="event-image"></div>
+                        </div>
+                        <div class="col-sm-8 paragraph-container">
+                            <p data-bind="text: eventDescription"></p>
+                            <p class="bottom-event-link" data-bind="text: eventAction"></p>
+                        </div>
+                        <div class="row share-button-container">
+                            <div class="share-event-button btn btn-primary btn-sm">Facebook</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <ul></ul>
+            </div>
+        </div>
+    </section>
+    <!--contact section-->
+    <section class="page-section section6" id="contact">
+        <div class="row text-center" id="contactInfo">
+            <p><img src="wwwroot/Images/chaplaincy-logo-white.png" class="logo-sm" /></p>
+            <p>P.O. Box 1271</p>
+            <p>Fresno, CA 93715</p>
+            <p>(559) 621-2120</p>
+            <p>For Chaplain Services, call (559) 621-7000</p>
+            <p><a class="whiteText">info@fpdchap.org</a></p>
+            <div class="btn btn-lg btn-primary buttonShadow" data-bind="click" role="button">
+                Donate now through Paypal
+            </div>
+        </div>
+        <div class="row" id="socialContactContainer">
+            <ul class="list-group">
+                <li class="col-sm-4 list-group-item text-center">
+                    <img class="footerLogo" src="wwwroot/images/youtube.png" />
+                </li>
+                <li class="col-sm-4 list-group-item text-center">
+                    <img class="footerLogo" src="wwwroot/images/twitter.gif" />
+                </li>
+                <li class="col-sm-4 list-group-item text-center">
+                    <img class="footerLogo" src="wwwroot/images/facebook.png" />
+                </li>
+            </ul>
+        </div>
+        <!--
+        <div id="footerContainer">
+            <div class="row">
+                <div id="footerList" role="tablist" data-bind="foreach: $root.footer">
+                    <div class="col-sm-3">
+                        <h3 data-bind="text: footerTitle"></h3>
+                        <ul class="list-group" data-bind="foreach: footerListItems">
+                            <li class="list-group-item">
+                                <a class="list-group-item" data-bind="text: $data"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    </section>
+    <!-- script files specifically for use by this page -->
+    <script src="wwwroot/lib/jquery/dist/jquery.js"></script>
+    <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="wwwroot/lib/knockout/dist/knockout.js"></script>
+    <script src="wwwroot/lib/bootstrap-touch-carousel/dist/js/bootstrap-touch-carousel.js"></script>
+    <script src="wwwroot/lib/ckeditor/ckeditor.js"></script>>
+    <script src="wwwroot/lib/firebase/firebase-debug.js"></script>
+    <script type="text/javascript" src="wwwroot/js/home.js"></script>
+</body>
+
+</html>

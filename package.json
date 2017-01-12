@@ -1,0 +1,22 @@
+{
+    "name": "fpcsite",
+    "version": "1.0.0",
+    "description": "FPD Chaplains Web App",
+    "main": "index.js",
+    "engines": {
+        "node": "6.9.1"
+    }
+    "scripts": {
+        "test": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/montanna/FPC0117.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/montanna/FPC0117/issues"
+    },
+    "homepage": "https://github.com/montanna/FPC0117#readme"
+}
