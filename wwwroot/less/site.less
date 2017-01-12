@@ -248,19 +248,6 @@ a:hover {
     .ease;
 }
 
-.transparent {
-    /*background: rgba(0, 0, 0, 0.1);*/
-    .navSolid;
-    height: 90px!important;
-    & > div > div > .nav > li > a {
-        height: 90px!important;
-        line-height: 59px;
-    }
-    & > div > div > .navbar-brand > img.logo-sm {
-        height: 45px!important;
-    }
-}
-
 .navbar-trans .navbar-brand,
 .navbar-trans > .container-fluid .navbar-brand {
     padding: 14px;
@@ -1112,7 +1099,7 @@ img.col6 {
 #socialContactContainer {
     background: @deptBlue;
     position: absolute;
-    bottom: 35vh;
+    bottom: 5vh;
     left: 0;
     width: 100%;
 }
@@ -1128,8 +1115,8 @@ img.col6 {
 }
 
 #contactInfo p img {
-    height: 150px;
-    width: 150px;
+    height: 150px!important;
+    width: 150px!important;
 }
 
 .paypal-button {
@@ -1145,7 +1132,22 @@ img.col6 {
 
 /*Media queries*/
 
+
+/* For larger screens / PCs*/
+
 @media (min-width: 800px) {
+    .transparent {
+        /*background: rgba(0, 0, 0, 0.1);*/
+        .navSolid;
+        height: 90px!important;
+        & > div > div > .nav > li > a {
+            height: 90px!important;
+            line-height: 59px;
+        }
+        & > div > div > .navbar-brand > img.logo-sm {
+            height: 45px!important;
+        }
+    }
     .col6 {
         width: 50%;
         display: inline-block;
@@ -1157,6 +1159,9 @@ img.col6 {
         max-width: 780px;
     }
 }
+
+
+/*For smaller screens / mobile */
 
 @media (max-width: 900px) {
     /*Sitewide fixes*/

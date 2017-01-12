@@ -178,18 +178,6 @@ a:hover {
   margin-right: 20px;
   transition: all 0.3s ease;
 }
-.transparent {
-  /*background: rgba(0, 0, 0, 0.1);*/
-  background-color: #041f26;
-  height: 90px!important;
-}
-.transparent > div > div > .nav > li > a {
-  height: 90px!important;
-  line-height: 59px;
-}
-.transparent > div > div > .navbar-brand > img.logo-sm {
-  height: 45px!important;
-}
 .navbar-trans .navbar-brand,
 .navbar-trans > .container-fluid .navbar-brand {
   padding: 14px;
@@ -889,7 +877,7 @@ img.col6 {
 #socialContactContainer {
   background: #355C95;
   position: absolute;
-  bottom: 35vh;
+  bottom: 5vh;
   left: 0;
   width: 100%;
 }
@@ -902,8 +890,8 @@ img.col6 {
   text-decoration: underline;
 }
 #contactInfo p img {
-  height: 150px;
-  width: 150px;
+  height: 150px!important;
+  width: 150px!important;
 }
 .paypal-button {
   position: absolute;
@@ -914,7 +902,20 @@ img.col6 {
   height: 10vh;
 }
 /*Media queries*/
+/* For larger screens / PCs*/
 @media (min-width: 800px) {
+  .transparent {
+    /*background: rgba(0, 0, 0, 0.1);*/
+    background-color: #041f26;
+    height: 90px!important;
+  }
+  .transparent > div > div > .nav > li > a {
+    height: 90px!important;
+    line-height: 59px;
+  }
+  .transparent > div > div > .navbar-brand > img.logo-sm {
+    height: 45px!important;
+  }
   .col6 {
     width: 50%;
     display: inline-block;
@@ -926,6 +927,7 @@ img.col6 {
     max-width: 780px;
   }
 }
+/*For smaller screens / mobile */
 @media (max-width: 900px) {
   /*Sitewide fixes*/
   video {
