@@ -13,7 +13,7 @@
 @facebookBlue: #3B5998;
 @temporaryYellow: #FFD420;
 @stealthRed: #E24743;
-@deptBlue: #355C95;
+@deptBlue: #1d2a33;
 @commGold: #E28C43;
 @riseViolet: #6F3398;
 @darkGrey: #2C2C2C;
@@ -65,7 +65,8 @@ body {
 }
 
 .page-section {
-    width: 100vw;
+    min-width: 100vw;
+    min-height: 105vh;
     padding-top: 5vh;
     padding-bottom: 20px;
 }
@@ -80,7 +81,6 @@ body {
 .section1 {
     background: url('../images/Downtown-Blue-Original.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 105vh;
     margin-top: -50px;
     padding: 30px;
 }
@@ -101,7 +101,7 @@ body {
 .section6 {
     /*temporary blue so headers are visible*/
     background-color: rgb(135, 184, 224);
-    height: 120vh;
+    min-height: 120vh;
 }
 
 .section6 {
@@ -113,8 +113,9 @@ body {
 
 .home-title-container {
     margin-top: 20px;
+    width: 100vw;
+    margin-left: -30px;
     text-align: center;
-    padding: 50px 0px;
     opacity: 0;
 }
 
@@ -201,14 +202,10 @@ a:hover {
 
 h1 {
     font-size: 48px;
-    font-family: "Bitter";
 }
 
-h2 {
-    font-family: 'Bitter';
-    padding-bottom: 30px;
-}
-
+h1,
+h2,
 h3,
 h4 {
     font-family: 'Bitter';
@@ -247,7 +244,7 @@ a:hover {
 }
 
 .navSolid {
-    background-color: #041f26;
+    background-color: @deptBlue;
 }
 
 .logo-sm {
@@ -280,7 +277,7 @@ a:hover {
     }
     &:focus,
     &.active {
-        background-color: @accentColor1;
+        background-color: lighten(@deptBlue, 10%);
         color: #fff;
     }
 }
@@ -336,6 +333,17 @@ section {
     min-height: 100vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+}
+
+.homeBanner {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100vw;
+    margin-left: -30px;
+    height: 286px;
+    position: absolute;
+    bottom: 132px;
+    background-image: linear-gradient(to bottom, #323232, 90%, #ffc900);
 }
 
 
@@ -1157,8 +1165,7 @@ img.col6 {
 
 @media (min-width: 800px) {
     .transparent {
-        /*background: rgba(0, 0, 0, 0.1);*/
-        .navSolid;
+        background: rgba(0, 0, 0, 0.2);
         height: 90px!important;
         & > div > div > .nav > li > a {
             height: 90px!important;
@@ -1167,6 +1174,9 @@ img.col6 {
         & > div > div > .navbar-brand > img.logo-sm {
             height: 45px!important;
         }
+    }
+    .home-title-container {
+        padding: 50px 0px;
     }
     .col6 {
         width: 50%;
@@ -1178,6 +1188,9 @@ img.col6 {
         max-width: 780px;
         height: 320px;
         margin-top: 15px;
+    }
+    .homeBanner > div > .btn {
+        font-size: 1.3em;
     }
 }
 

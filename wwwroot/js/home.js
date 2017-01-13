@@ -1,4 +1,13 @@
 ﻿// --- Viewmodels --
+//HOH signup
+function HOHSignupViewModel() {
+    var self = this;
+    self.openPopUp = function() {
+        //open popup
+    }
+}
+
+
 //Login
 function LoginViewModel() {
     var self = this;
@@ -711,6 +720,8 @@ $(document).ready(function() {
     ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
     var eventsVM = new EventsViewModel();
     ko.applyBindings(eventsVM, $("#events")[0]);
+    var hohVM = new HOHSignupViewModel();
+    ko.applyBindings(hohVM, $(".section1")[0]);
 
     //home page 'seatbelt' animation for the tagline
     setTimeout(function() {

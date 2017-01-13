@@ -94,12 +94,21 @@
         <div class="text-center home-title-container animated">
             <img src="wwwroot/images/chaplaincy-logo-white.png" />
             <h1 class="wt bitter">Fresno Police Chaplaincy</h1>
-        </div>
-        <div class="animatedLabelContainer">
-            <h4 class="mont">
+            <div class="animatedLabelContainer">
+                <h4 class="mont">
                 <span class="animated label1">Connecting the at-risk </span>
                 <span class="animated label2">with those willing to risk.</span>
             </h4>
+            </div>
+        </div>
+        <div class="homeBanner wt">
+            <div class="text-center" style="padding:20px;">
+                <h3 class="mont">HOME OF HOPE TICKETS ON SALE NOW</h2>
+                <h4 class="mont">GRAND PRIZE DRAWING WEDNESDAY, MAY 3, 2017 | TWO-TICKET BUNDLE DRAWING WEDNESDAY, APRIL 26, 2017</h4>
+                <div class="btn btn-primary hohBtn" style="margin: 10px; max-width:85%" data-bind="click: function(){$root.openPopUp();}">Yes, I want to purchase a Home of Hope <br/> ticket or bundle!</div>
+            <p>Project STEALTH through The Fresno Police Chaplaincy is excited to announce that we are a beneficiary of the 2017 Granville Home of Hope giveaway! Your tax-deductible Home of Hope ticket enters you for a chance to win a brand new Granville home, and 100% of proceeds from ticket sales purchased through us go directly to The Fresno Police Chaplaincy! Tickets are $100. Buy 2 tickets and you will be entered into a second drawing for a two-year lease of a brand new Lexus! Every ticket purchased through The Fresno Police Chaplaincy will also receive a free Support Blue gift.
+            </p>
+        </div>
         </div>
         <div class="animated" id="scroll-button-row">
             <img id="scrollButton" src="wwwroot/images/arrow-icon2.png" />
@@ -116,8 +125,8 @@
                 <div id="ministriesCarousel" data-bind="style: {background:'rgb(0,0,0) url(' + $root.selectedTab().tabImg + ') center top no-repeat'}">
                     <h1 class="carouselCaption wt" data-bind="html: $root.selectedTab().tabTitle"></h1>
                     <h3 class="carouselCaption  carouselCaption2" data-bind="html: $root.selectedTab().tabCaption"></h3>
-                </div>
             </div>
+        </div>
         </div>
         <div id="ministriesContainer">
             <div class="row">
