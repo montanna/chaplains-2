@@ -13,8 +13,8 @@
 @facebookBlue: #3B5998;
 @temporaryYellow: #FFD420;
 @stealthRed: #E24743;
-@deptBlue: #1d2a33;
-@commGold: #E28C43;
+@deptBlue: #123456;
+@commGold: #D97C30;
 @riseViolet: #6F3398;
 @darkGrey: #2C2C2C;
 @lightGrey: #808080;
@@ -79,8 +79,9 @@ body {
 /* Sections */
 
 .section1 {
-    background: url('../images/Downtown-Blue-Original.jpg') no-repeat center center fixed;
+    background: rgba(125, 99, 40, 0.35) url(../images/TPA4.jpg) no-repeat center center fixed;
     background-size: cover;
+    background-blend-mode: color-burn;
     margin-top: -50px;
     padding: 30px;
 }
@@ -120,7 +121,7 @@ body {
 }
 
 .home-title-container img {
-    height: 15vh;
+    height: 10vh;
 }
 
 #scroll-button-row {
@@ -159,6 +160,7 @@ body {
 #ministriesCarousel {
     height: 60vh;
     background-size: cover!important;
+    background-blend-mode: color-burn!important;
     margin-top: -70px;
 }
 
@@ -227,6 +229,16 @@ a:hover {
     color: #111;
 }
 
+.btn-primary {
+    background-color: #4ab1d8
+}
+
+.homeImg {
+    height: 300px;
+    background-image: url("../images/HomeOfHope.jpg");
+    background-size: contain;
+}
+
 
 /*Navbar styling*/
 
@@ -265,6 +277,7 @@ a:hover {
 .navbar-trans > li > a,
 .nav > li > a {
     color: #fff;
+    text-shadow: 1px 1px 4px #000;
     padding-left: 10px;
     padding-right: 10px;
     height: inherit;
@@ -272,7 +285,7 @@ a:hover {
     .mont;
     .ease;
     &:hover {
-        background-color: @accentColor2;
+        background-color: lighten(@deptBlue, 20%);
         color: #fff;
     }
     &:focus,
@@ -343,7 +356,12 @@ section {
     height: 286px;
     position: absolute;
     bottom: 132px;
-    background-image: linear-gradient(to bottom, #323232, 90%, #ffc900);
+    /*background-image: linear-gradient(to bottom, #323232, 90%, #ffc900);*/
+    background: #123456;
+}
+
+.animatedLabelContainer {
+    text-shadow: 3px 3px 6px #000;
 }
 
 
@@ -885,7 +903,7 @@ img.col6 {
     background-color: @stealthRed !important;
     flex-grow: 1.6;
     &.popUpHeaderBar {
-        box-shadow: -40px 40px 150px @stealthRed;
+        box-shadow: 0px 0px 150px @stealthRed;
     }
 }
 
@@ -912,14 +930,14 @@ img.col6 {
 .deptLink {
     background-color: @deptBlue !important;
     &.popUpHeaderBar {
-        box-shadow: -40px 40px 150px @deptBlue;
+        box-shadow: 0px 0px 150px @deptBlue;
     }
 }
 
 .commLink {
     background-color: @commGold !important;
     &.popUpHeaderBar {
-        box-shadow: -40px 40px 150px @commGold;
+        box-shadow: 0px 0px 150px @commGold;
     }
 }
 
@@ -927,7 +945,7 @@ img.col6 {
     background-color: @riseViolet !important;
     flex-grow: 1.4;
     &.popUpHeaderBar {
-        box-shadow: -40px 40px 150px @riseViolet;
+        box-shadow: 0px 0px 150px @riseViolet;
     }
 }
 
@@ -1177,6 +1195,7 @@ img.col6 {
     }
     .home-title-container {
         padding: 50px 0px;
+        text-shadow: 3px 3px 6px #000;
     }
     .col6 {
         width: 50%;
