@@ -2,8 +2,17 @@
 //HOH signup
 function HOHSignupViewModel() {
     var self = this;
+    self.firstName = ko.observable("First name");
+    self.lastName = ko.observable("Last name");
+    self.email = ko.observable("Email");
+    self.phone = ko.observable("Phone");
     self.openPopUp = function() {
         //open popup
+        $(".HOHPopUp").show();
+    }
+    self.closeHOH = function() {
+        $(".HOHPopUp").hide();
+
     }
 }
 
@@ -99,7 +108,7 @@ function TabViewModel() {
         tabId: 1,
         tabStyle: "riseLink ",
         tabTitle: "Project RISE - On Campus",
-        tabCaption: "<img src='wwwroot/images/rise-logo-white.png' style='height: 20vh;; -webkit-filter: drop-shadow(4px 4px 2px #222); filter: drop-shadow(4px 4px 2px #222);'/> ",
+        tabCaption: "<img src='wwwroot/images/rise-logo-white.png' style='height: 20vh; -webkit-filter: drop-shadow(4px 4px 2px #222); filter: drop-shadow(4px 4px 2px #222);'/> ",
         tabImg: "wwwroot/images/school4.jpg",
         pathToImage: "wwwroot/images/mockupSC.jpg",
         pathToPDF: "wwwroot/docs/school chaplains brochure.pdf",

@@ -190,6 +190,7 @@ input,
 select,
 textarea {
     max-width: 280px;
+    min-width: 100px;
 }
 
 html,
@@ -230,13 +231,31 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #4ab1d8
+    background-color: #4ab1d8;
 }
 
 .homeImg {
     height: 300px;
     background-image: url("../images/HomeOfHope.jpg");
     background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.HOHPopUp {
+    display: none;
+    position: fixed;
+    background-color: #4ab1d8;
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -150px;
+    /* Negative half of height. */
+    margin-left: -250px;
+    /* Negative half of width. */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -950,9 +969,9 @@ img.col6 {
 }
 
 .blueLink {
-    background-color: darken(@deptBlue, 20%) !important;
+    background-color: darken(@deptBlue, 10%) !important;
     &.popUpHeaderBar {
-        box-shadow: -40px 40px 150px @riseViolet;
+        box-shadow: -40px 40px 150px @deptBlue;
     }
 }
 
