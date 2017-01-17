@@ -42,25 +42,6 @@ function LoginViewModel() {
 
         $(".eventCreator").css("display", "block");
 
-        /*
-
-        self.user = {
-            email: self.email(),
-            password: Self.password()
-        };
-
-        $.ajax({
-            url: "/Login/",
-            type: 'post',
-            data: user,
-            contentType: 'application/json',
-            success: function (result) {
-                alert("User created successfully!");
-            }
-        });
-        
-        */
-
         $(".login-section").removeClass("showLoginSection");
         $("body").css("overflow-y", "scroll");
     }
@@ -716,6 +697,18 @@ function initControls() {
 $(document).ready(function() {
 
     initControls();
+
+    //set up firebase
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAKypRvUnUzE6XmUIXCOIe4Al2x2Xd593s",
+        authDomain: "chaplains-63a1a.firebaseapp.com",
+        databaseURL: "https://chaplains-63a1a.firebaseio.com",
+        storageBucket: "chaplains-63a1a.appspot.com",
+        messagingSenderId: "776082682108"
+    };
+    firebase.initializeApp(config);
+
 
     //apply bindings
     ko.applyBindings(new LoginViewModel(), $("#sign-in-link")[0]);
