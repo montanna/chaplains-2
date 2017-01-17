@@ -119,12 +119,14 @@
         <div class="close" data-bind="click: function(){$root.closeHOH()}">X</div>
         <h4 class=mont>Thanks for your interest!</h4>
         <p>Please leave us your name and email and/or phone number and we'll get in touch as soon as we can.</p>
-            <div class="form-group">
-            <input type="firstName" data-bind="$root.firstName()" placeholder="First name"/>
-            <input type="lastName" data-bind="$root.lastName()" placeholder="Last name"/>
-            <input type="email" data-bind="$root.email()" placeholder="Email"/>
-            <input type="phone" data-bind="$root.phone()" placeholder="Phone"/>
-            <div class="btn btn-warning">Submit</div>
+            <div class="form-group text-center">
+            <input type="firstName" data-bind="value: $root.firstName" placeholder="First name">
+            <input type="lastName" data-bind="value: $root.lastName" placeholder="Last name">
+            <input type="email" data-bind="value: $root.email" placeholder="Email">
+            <input type="phone" data-bind="value: $root.phone" placeholder="Phone">
+<br>
+
+            <div class="btn btn-warning" style="margin:10px" data-bind="click: function(){$root.submit();}">Submit</div>
             </div>
         </div>
     </section>

@@ -1,21 +1,48 @@
-﻿// --- Viewmodels --
+﻿//set up firebase
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAKypRvUnUzE6XmUIXCOIe4Al2x2Xd593s",
+    authDomain: "chaplains-63a1a.firebaseapp.com",
+    databaseURL: "https://chaplains-63a1a.firebaseio.com",
+    storageBucket: "chaplains-63a1a.appspot.com",
+    messagingSenderId: "776082682108"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+// --- Viewmodels --
 //HOH signup
+var HOHSignee = function(first, last, email, phone) {
+    var self = this;
+    self.firstName = first;
+    self.lastName = last;
+    self.email = email;
+    self.phone = first;
+}
+
 function HOHSignupViewModel() {
     var self = this;
-    self.firstName = ko.observable("First name");
-    self.lastName = ko.observable("Last name");
-    self.email = ko.observable("Email");
-    self.phone = ko.observable("Phone");
+    self.HOHList = firebase.database().ref('HOHList');
+    self.firstName = ko.observable("");
+    self.lastName = ko.observable("");
+    self.email = ko.observable("");
+    self.phone = ko.observable("");
     self.openPopUp = function() {
         //open popup
         $(".HOHPopUp").show();
     }
     self.closeHOH = function() {
         $(".HOHPopUp").hide();
+    }
+    self.submit = function() {
+        self.curInfo = new HOHSignee(self.firstName(), self.lastName(), self.email(), self.phone());
+        self.HOHList.push(self.curInfo);
+        console.log("New entry added to HOH list.");
+        self.closeHOH();
 
     }
 }
-
 
 //Login
 function LoginViewModel() {
@@ -36,6 +63,13 @@ function LoginViewModel() {
     }
 
     self.loginUser = function(formElement) {
+        firebase.auth().signInWithEmailAndPassword(self.email(), self.password()).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("Login error " + errorCode + "/n");
+            // ...
+        });
 
         $("#inputEmail").val("");
         $("#inputPassword").val("");
@@ -44,6 +78,7 @@ function LoginViewModel() {
 
         $(".login-section").removeClass("showLoginSection");
         $("body").css("overflow-y", "scroll");
+        console.log("Login successful.")
     }
 }
 
@@ -433,50 +468,6 @@ function EventsViewModel() {
     });
 }
 
-
-//Contact footer
-/*
-function ContactViewModel() {
-    var self = this;
-
-    self.footer = ko.observableArray([]);
-
-    // initialize the array
-    self.footer.push({
-        footerItemId: 1,
-        footerTitle: "Information",
-        footerListItems: [
-            "Products", "Services", "Benefits"
-        ]
-    });
-
-    self.footer.push({
-        footerItemId: 2,
-        footerTitle: "Follow Us",
-        footerListItems: [
-            "Twitter", "Facebook", "Google+"
-        ]
-    });
-
-    self.footer.push({
-        footerItemId: 3,
-        footerTitle: "Contact Us",
-        footerListItems: [
-            "Email", "Headquarters", "Management"
-        ]
-    });
-
-    self.footer.push({
-        footerItemId: 4,
-        footerTitle: "Customer Service",
-        footerListItems: [
-            "About Us", "Delivery Information", "Privacy Policy"
-        ]
-    });
-}
-*/
-
-
 function initControls() {
 
     $("#homeBtn").on("click", function() {
@@ -690,25 +681,11 @@ function initControls() {
         }
 
     });
-
 }
-
 
 $(document).ready(function() {
 
     initControls();
-
-    //set up firebase
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyAKypRvUnUzE6XmUIXCOIe4Al2x2Xd593s",
-        authDomain: "chaplains-63a1a.firebaseapp.com",
-        databaseURL: "https://chaplains-63a1a.firebaseio.com",
-        storageBucket: "chaplains-63a1a.appspot.com",
-        messagingSenderId: "776082682108"
-    };
-    firebase.initializeApp(config);
-
 
     //apply bindings
     ko.applyBindings(new LoginViewModel(), $("#sign-in-link")[0]);
@@ -722,7 +699,7 @@ $(document).ready(function() {
     ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
     var eventsVM = new EventsViewModel();
     ko.applyBindings(eventsVM, $("#events")[0]);
-    var hohVM = new HOHSignupViewModel();
+    hohVM = new HOHSignupViewModel();
     ko.applyBindings(hohVM, $(".section1")[0]);
 
     //home page 'seatbelt' animation for the tagline
