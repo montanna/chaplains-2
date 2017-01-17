@@ -46,7 +46,7 @@ body {
 }
 /* Sections */
 .section1 {
-  background: rgba(125, 99, 40, 0.35) url(../images/TPA4.jpg) no-repeat center center fixed;
+  background: rgba(125, 99, 40, 0.35) url(../images/TPA4.JPG) no-repeat center center fixed;
   background-size: cover;
   background-blend-mode: color-burn;
   margin-top: -50px;
