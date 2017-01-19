@@ -446,7 +446,7 @@ function InvolvementViewModel() {
         self.curInfo = new VolunteerSignee(self.firstName(), self.lastName(), self.email(), self.phone());
         self.VolunteerList.push(self.curInfo);
         console.log("New entry added to volunteer list.");
-        self.closeHOH();
+        self.closePopUp();
         emailjs.send("default_service", "volunteersignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
 
     }
