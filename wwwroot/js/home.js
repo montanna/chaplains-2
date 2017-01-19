@@ -373,6 +373,14 @@ function GalleryViewModel() {
     })
 }
 
+var VolunteerSignee = function(first, last, email, phone) {
+    var self = this;
+    self.first = first;
+    self.last = last;
+    self.email = email;
+    self.phone = phone;
+}
+
 //Get involved cards
 function InvolvementViewModel() {
     var self = this;
@@ -424,6 +432,26 @@ function InvolvementViewModel() {
         $(".PopUpBkg").hide();
 
     };
+
+    self.VolunteerList = firebase.database().ref('VolunteerList');
+
+    self.openPopUp = function() {
+        //open popup
+        $(".getInvolvedPopUp").show();
+    }
+    self.closePopUp = function() {
+        $(".getInvolvedPopUp").hide();
+    }
+    self.submit = function() {
+        self.curInfo = new VolunteerSignee(self.firstName(), self.lastName(), self.email(), self.phone());
+        self.VolunteerList.push(self.curInfo);
+        console.log("New entry added to volunteer list.");
+        self.closeHOH();
+        emailjs.send("default_service", "volunteersignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
+
+    }
+
+
 }
 
 //Events

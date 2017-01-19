@@ -693,7 +693,7 @@ img.col6 {
   -webkit-filter: brightness(1);
 }
 .galleryImgMain {
-  height: 40vh;
+  height: 60vh;
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;

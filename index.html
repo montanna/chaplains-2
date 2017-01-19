@@ -247,7 +247,7 @@
                             <ul data-bind="html: cardDescription"> </ul>
                         </div>
                         <div class="row text-center">
-                            <div class="btn btn-lg btn-primary involvementApplyBTN buttonShadow" data-bind="css: cardColor"> Apply Now </div>
+                            <div class="btn btn-lg btn-primary involvementApplyBTN buttonShadow" data-bind="css: cardColor; click: function(){$root.openPopUp();}"> Apply Now </div>
                         </div>
                     </div>
                 </div>
@@ -304,6 +304,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="getInvolvedPopUp wt">
+            <div class="close" data-bind="click: function(){$root.closePopUp()}">X</div>
+            <h4 class=mont>Thanks for your interest!</h4>
+            <p>Please leave us your name and email and/or phone number and we'll get in touch as soon as we can.</p>
+            <div class="form-group text-center">
+                <input type="firstName" data-bind="value: $root.firstName" placeholder="First name">
+                <input type="lastName" data-bind="value: $root.lastName" placeholder="Last name">
+                <input type="email" data-bind="value: $root.email" placeholder="Email">
+                <input type="phone" data-bind="value: $root.phone" placeholder="Phone">
+                <br>
+                <div class="btn btn-warning" style="margin:10px" data-bind="click: function(){$root.submit();}">Submit</div>
             </div>
         </div>
     </section>
