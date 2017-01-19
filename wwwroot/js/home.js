@@ -320,7 +320,7 @@ function GalleryViewModel() {
     self.selectAlbum = function(data, event) {
         self.selectedAlbum(data);
     }
-    self.mainImg = ko.observable("wwwroot/images/" + self.selectedAlbum().albumFolder + "/1.jpg");
+    self.mainImg = ko.observable("wwwroot/images/" + self.selectedAlbum().albumFolder + "/1.JPG");
     self.imgClicked = function(data, event) {
         var that = $(event.currentTarget);
         self.mainImg(data.imgPath());
@@ -357,7 +357,7 @@ function GalleryViewModel() {
         }
         if ($(this).is(".galleryLeft") && index > 1) index--;
         else if (index < self.selectedAlbum().albumLength + 1) index++;
-        var newUrl = urlStart + index + ".jpg";
+        var newUrl = urlStart + index + ".JPG";
         self.mainImg(newUrl);
         $(".imgActive").removeClass("imgActive");
         var bkgAttr = "url(" + newUrl + ")";
@@ -395,7 +395,7 @@ function InvolvementViewModel() {
         cardTitle: "Patrol Chaplains",
         cardTagline: "Become a patrol chaplain to support law enforcement officers and our community.",
         cardDescription: " <li>Ride along with officers to non-violent scenes</li> <li>Provide counseling and support to officers, victims, and families</li> <li>Attend community events</li>",
-        cardImg: "url('wwwroot/images/laura2.jpg')",
+        cardImg: "url('wwwroot/images/laura2.JPG')",
         cardColor: "deptLink deptBtn"
     }, {
         cardTitle: "Project RISE",
