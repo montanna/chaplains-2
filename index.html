@@ -105,7 +105,7 @@
             <div class="text-center col-sm-6" style="padding:20px;">
                 <h3 class="mont">HOME OF HOPE TICKETS ON SALE NOW</h2>
                 <h4 class="mont">GRAND PRIZE DRAWING WEDNESDAY, MAY 3, 2017 | TWO-TICKET BUNDLE DRAWING WEDNESDAY, APRIL 26, 2017</h4>
-                <div class="btn btn-primary hohBtn" style="margin: 10px; max-width:85%" data-bind="click: function(){$root.openPopUp();}">Yes, I want to purchase a Home of Hope <br/> ticket or bundle!
+                <div class="btn hohBtn" style="background-color: #4ab1d8; margin: 10px; max-width:85%" data-bind="click: function(){$root.openPopUp();}">Yes, I want to purchase a Home of Hope <br/> ticket or bundle!
                 </div>
             <p style="display: none">Project STEALTH through The Fresno Police Chaplaincy is excited to announce that we are a beneficiary of the 2017 Granville Home of Hope giveaway! Your tax-deductible Home of Hope ticket enters you for a chance to win a brand new Granville home, and 100% of proceeds from ticket sales purchased through us go directly to The Fresno Police Chaplaincy! Tickets are $100. Buy 2 tickets and you will be entered into a second drawing for a two-year lease of a brand new Lexus! Every ticket purchased through The Fresno Police Chaplaincy will also receive a free Support Blue gift.
             </p>
@@ -198,7 +198,7 @@
         <div class="about-us-container">
             <p class="sectionHeader">About Us</p>
             <p class="about-us-top-p">The Fresno Policy Chaplaincy is a non-profit organization partnering with law enforcement to bring hope to our community.</p>
-            <div class="row">
+            <div class="row" style="display: none;">
                 <video controls src="" width="300" height="200" style="margin-left: 25%;">
                     <source />
                 </video>
@@ -234,10 +234,14 @@
         </div>
         <div id="involvementContainer">
             <div class="row" data-bind="foreach: $root.cards">
-                <div class="col-sm-3">
+                <div class="col-sm-3" style="padding: 4px;">
                     <div class="involvementContentBox well">
-                        <div class="row involvementContentText">
+                        <div class="row text-center">
                             <h4 class="involvementBoxHeader" data-bind="text: cardTitle"> </h4>
+                            <div class="getInvolvedImg" data-bind="style: {backgroundImage: cardImg}">
+                            </div>
+                        </div>
+                        <div class="row involvementContentText">
                             <p data-bind="text: cardTagline"></p>
                             <ul data-bind="html: cardDescription"> </ul>
                         </div>
@@ -303,13 +307,19 @@
         </div>
     </section>
     <!--news section-->
-    <section class="page-section section5" id="news">
+    <section class="page-section section5 text-center" id="news">
         <div class="row title-container sectionHeader">
             <p>News &amp; Events</p>
         </div>
         <div class="row event-banner">
-            <p>Purchase Granville Tickets Now!</p>
+            <a class="homeLink">
+                <p>Purchase Granville Tickets Now!</p>
+            </a>
         </div>
+        <h4>
+            News and Events coming soon!
+        </h4>
+        <!--
         <div class="news-events-container" id="events">
             <div class="col-sm-6 events">
                 <ul class="events-list" data-bind="foreach: events">
@@ -334,6 +344,7 @@
                 <ul></ul>
             </div>
         </div>
+        -->
     </section>
     <!--contact section-->
     <section class="page-section section6" id="contact">
@@ -384,6 +395,12 @@
     <script src="wwwroot/lib/bootstrap-touch-carousel/dist/js/bootstrap-touch-carousel.js"></script>
     <script src="wwwroot/lib/knockout/dist/knockout.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        emailjs.init("user_kumy0Zh8D0Qmk9fstpfru");
+    })();
+    </script>
     <script type="text/javascript" src="wwwroot/js/home.js"></script>
 </body>
 

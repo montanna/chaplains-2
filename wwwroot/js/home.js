@@ -40,6 +40,7 @@ function HOHSignupViewModel() {
         self.HOHList.push(self.curInfo);
         console.log("New entry added to HOH list.");
         self.closeHOH();
+        emailjs.send("default_service", "hohsignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
 
     }
 }
@@ -131,7 +132,7 @@ function TabViewModel() {
         tabContentHeader: "R.I.S.E: Resilience in Student Education",
         tabContentBody: "Fresno Police chaplains teach resiliency skills in Fresno Unified Elementary Schools.",
         tabContentBodyExt: "<p> Resilience In Student Education (RISE) is a partnership between the Fresno Police Chaplaincy and Fresno Unified School District to address the interpersonal and intrapersonal development of students beginning in the first grade. Research has shown that students who possess interpersonal and intrapersonal skills (self-efficacy, emotional regulation, empathy, impulse control, causal analysis, and optimism) are much more resilient and better able to “bounce back” from life’s challenges and maltreatment. Statistically, children who grow up in single parent homes are twice as likely to be abused and or exploited. </p> <ul class='col6'> <li>36% of the children live in single-parent households – the majority of which are fatherless</li> <li>In fatherless homes, children are two to three times more likely to:    <ul> <li> use drugs </li> <li>have educational, emotional and behavioral problems</li> <li>be victims of child abuse</li> <li>become teen parents</li> <li>engage in criminal behavior</li> </ul> </li> </ul> <img class='col6' src='wwwroot/images/school1.jpg'></img> <p> Unfortunately, many of the challenges our children will face are unpreventable. While we may not be able to stop events that rob these kids of their hopes, we can teach them skillsets to overcome adversity and thrive.  <br/> One proactive solution, the School Resource Chaplaincy, was initiated in January of 2011 and is currently found in twenty Fresno Unified elementary schools.  The mission was to focus on protection and building character in younger students.  With time came the realization that acquiring positive character traits was rooted in the child’s sense of hopefulness for overcoming life’s challenges.  Research was reviewed which analyzed the causes and effects of overwhelming stresses on children raised in environments having great hardships and dysfunctional patterns.  Studies of successful and well-adjusted adults raised in such environments revealed they had maintained an ongoing sense of hopefulness by learning resilience or “bounce back” thinking skills from mentors.</p> <p> The School Resource Chaplains serve as mentors in promoting “bounce back” resiliency thinking patterns to 1st graders through the reading and discussion of children’s literature books.  Along with teaching resiliency skills, the SRCs provide an additional layer of abuse protection for students.  Finally, the SRCs offer care and comfort to students, staff, and/or parents when needs are discerned and assistance requested.  In summary, we minister hopefulness to the hopeless…<br/> Currently the SRC program is in need of individuals with a passion for youth and willingness to serve approximately five hours a week on campus.  Chaplain candidates do not have to be licensed, ordained or credentialed.  Training, materials and prayer are provided!  If interested in knowing more, contact John Edmondson at (559) 621-2120 or go to www.fpdchap.org. </p> ",
-        hasVideo: true,
+        hasVideo: false,
         video: "<video width=300 height=150 controls></video>",
         btnText: "Volunteer Now"
     });
@@ -146,7 +147,7 @@ function TabViewModel() {
         tabContentHeader: "S.T.E.A.L.T.H: <br/>Stop Teen Exploitation And Liberate Through Hope",
         tabContentBody: "1/3 of the 2.8 million U.S. kids who run away each year are recruited into pornography and prostitution within 48 hours. <br/>Join Project STEALTH to protect and mentor a runaway teen today.",
         tabContentBodyExt: "<p>Project STEALTH (Stop Teen Exploitation And Liberate Through Hope) brings hope into the lives of at-risk youth through education, intervention, and mentorship. Each year in the U.S., 2.8 million youth run away from home. One-third of the runaways are recruited into pornography and prostitution within 48 hours. On average, the Fresno Police Department receives 2,700 runaway calls per year. That means one-third of our runaways are targeted for exploitation within two days of running away.</p> <p>Keeping children home and safe from those in our society who prey on our most valuable resources is our goal. Through Project STEALTH, a police chaplain responds to handle reporting requirements, evaluate risk behaviors, and offer mentorship. Matthew 28:19 tells us to “go and make disciples…” 60% of our runaway youth want a mentor in their life, and just an hour or so a week can change the trajectory for these children - many of whom are growing up and simply being conditioned to exist. The idea of living and succeeding isn’t on their radar - but you can help. Consider joining our team of mentors to bring hope to these teens. Remember, our kids will be influenced one way or the other, through you or those who want to exploit them.</p> <p>Project STEALTH is currently working with 32 at-risk youth through our mentorship program. During this last year we have seen an incredible impact on the behavioral patterns, school attendance, and family dynamics. Sign up to volunteer as a mentor today and change a life.</p> ",
-        hasVideo: true,
+        hasVideo: false,
         video: "<video id='outreachVideo' width='300' height='150' controls></video>",
         btnText: "Volunteer Now"
 
@@ -162,7 +163,7 @@ function TabViewModel() {
         pathToPDF: "wwwroot/docs/patrol chaplains brochure.pdf",
         tabContentHeader: "Patrol Chaplains",
         tabContentBody: "Fresno Police chaplains are available 24 hours a day, 365 days a year, to respond to emergent and non-emergent needs of our community.",
-        tabContentBodyExt: "",
+        tabContentBodyExt: "<p>Fresno Police Patrol Chaplains are available 24 hours a day, 365 days a year.  As \"First Responders\" Chaplains are uniquely positioned to respond to emergent and non-emergent needs of our citizens of The City of Fresno.  Officers can call for a chaplain any time they feel the circumstances warrant it or a citizen requests one. </p> <p> Patrol Chaplains offer immediate care and comfort to citizens during critical incidents.They deliver death notifications to next of kin, comfort and provide resources to family members, and provide follow up when appropriate.Chaplains are also used proactively for follow up on nonviolent domestic disturbance calls, providing counsel and educational resources to help stop the cycle of abuse. </p> <p> The N.E.S.T.(Neighborhood Emergency Support Team) is our mobile unit where our Chaplains provide nourishment, water and a place to rest for officers and community members during extended calls.Patrol Chaplains are also available to officers as a confidential listening ear, offering counsel and resources to assist with the emotional hazards of being in law enforcement. </p>",
         hasVideo: false,
         video: "",
         btnText: "Volunteer Now"
@@ -177,7 +178,7 @@ function TabViewModel() {
         pathToImage: "",
         tabContentHeader: "Zone Ministry",
         tabContentBody: "Want to impact your neighborhood? Zone ministry partners your church with the Fresno Police Department to respond to those in your immediate community who are in need of support.",
-        tabContentBodyExt: "",
+        tabContentBodyExt: "Hello Church, <p>It’s time for a paradigm shift in Fresno; when you think of the largest opportunity for outreach does the Fresno Police Department come to mind? Probably not, but it will in the “not so distant future.” The Fresno Police Department averages more than 2,000 events called into our dispatch per night. Each person giving their address, name, and contact information, wanting someone to reach out to them. In some cases, they just want to know someone cares about them. Most of these calls are relational, people who are distressed and nowhere to turn. Of course the local church holds the answer, but how does the church learn about the hurting going on in their own neighborhood? </p><p>Let me introduce you to the “not so distant future.” We call it Zone Ministries; the City of Fresno is broken up into five quadrants and in those quadrants we have zones that are approximately one mile in size and your church occupies one of the zones. Here is where the outreach begins; your church partnering with us to search out relational calls that occur in real time for immediate follow up. These calls include disturbances, runaways, sick and injured, just to name a few.</p> <p>A partnership with your police department and chaplaincy opens the dialogue with your neighbors and meets them when life’s challenges has impacted them to a point of reaching out. A response by your church meeting their physical, emotional, and spiritual needs can turn our city around one door at a time. Here’s how it works:</p><p> Encourage one of your church members who has a heart to transform our city. Have him or her apply under “get involved” tab. We will respond to their interest and provide all training, uniforms, and equipment as they partner with our agency for transformation.</p>",
         hasVideo: false,
         video: "",
         btnText: "Become a Church Partner"
@@ -380,21 +381,25 @@ function InvolvementViewModel() {
         cardTitle: "Project STEALTH",
         cardTagline: "Become a mentor for at-risk teens.",
         cardDescription: "<li>Join a network of mentors supporting youth across the city</li> <li>Provide families with resources to help them make a fresh start</li> <li>Build relationships with teens and famililes and bring hope to the hopeless</li>",
+        cardImg: "url('wwwroot/images/stealth1.jpg')",
         cardColor: "stealthLink stealthBtn"
     }, {
         cardTitle: "Patrol Chaplains",
         cardTagline: "Become a patrol chaplain to support law enforcement officers and our community.",
         cardDescription: " <li>Ride along with officers to non-violent scenes</li> <li>Provide counseling and support to officers, victims, and families</li> <li>Attend community events</li>",
+        cardImg: "url('wwwroot/images/laura2.jpg')",
         cardColor: "deptLink deptBtn"
     }, {
         cardTitle: "Project RISE",
         cardTagline: "Become a school chaplain and help children develop resiliency.",
         cardDescription: "<li>Volunteer at elementary schools for 2 hours each week</li> <li>Provide resources and support to children and families</li",
+        cardImg: "url('wwwroot/images/school1.jpg')",
         cardColor: "riseLink riseBtn"
     }, {
         cardTitle: "Zone Ministries",
         cardTagline: "Become a church partner",
         cardDescription: "<li>Partner with the Fresno Police Chaplaincy to bring ministry to those who need it most</li>",
+        cardImg: "url('wwwroot/images/church1.jpeg')",
         cardColor: "commLink commBtn"
 
     });
@@ -470,6 +475,17 @@ function EventsViewModel() {
 
 function initControls() {
 
+    $(".homeLink").on("click", function() {
+        $("html,body").animate({
+            scrollTop: $("#home").offset().top - 50
+        }, 800);
+        $(".active").removeClass("active");
+        $("#homeBtn").addClass("active");
+        if ($(window).width() <= 768) {
+            $(".navbar-collapse").removeClass("in");
+            $(".navbar-collapse").addClass("collapse");
+        }
+    });
     $("#homeBtn").on("click", function() {
         $("html,body").animate({
             scrollTop: $("#home").offset().top - 50
@@ -697,8 +713,8 @@ $(document).ready(function() {
     ko.applyBindings(galleryVM, $("#gallery")[0]);
     var involvementVM = new InvolvementViewModel();
     ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
-    var eventsVM = new EventsViewModel();
-    ko.applyBindings(eventsVM, $("#events")[0]);
+    //var eventsVM = new EventsViewModel();
+    //ko.applyBindings(eventsVM, $("#events")[0]);
     hohVM = new HOHSignupViewModel();
     ko.applyBindings(hohVM, $(".section1")[0]);
 
