@@ -300,7 +300,7 @@ var album = function(item) {
     self.getImages = function(folder, len) {
         var tmpArray = [];
         for (var i = 1; i <= len + 1; i++) {
-            tmpArray.push({ imgPath: ko.observable("wwwroot/images/" + folder + "/" + i + ".jpg"), id: i });
+            tmpArray.push({ imgPath: ko.observable("wwwroot/images/" + folder + "/" + i + ".JPG"), id: i });
         }
         self.albumImages(tmpArray);
     }
@@ -450,8 +450,6 @@ function InvolvementViewModel() {
         emailjs.send("default_service", "volunteersignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
 
     }
-
-
 }
 
 //Events
