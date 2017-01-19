@@ -158,7 +158,7 @@ function TabViewModel() {
         tabStyle: "deptLink ",
         tabTitle: "Patrol Chaplains",
         tabCaption: "",
-        tabImg: "wwwroot/images/laura1.jpg",
+        tabImg: "wwwroot/images/laura1.JPG",
         pathToImage: "wwwroot/images/mockupPC.jpg",
         pathToPDF: "wwwroot/docs/patrol chaplains brochure.pdf",
         tabContentHeader: "Patrol Chaplains",
