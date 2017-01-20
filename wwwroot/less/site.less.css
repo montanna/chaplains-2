@@ -1063,7 +1063,7 @@ img.col6 {
 /*For smaller screens / mobile */
 @media (max-width: 900px) {
   /*Home*/
-  .home-title-container {
+  .home-title-container > h1 {
     font-size: 2.5em;
     margin-top: 10px;
   }
