@@ -460,42 +460,12 @@ function EventsViewModel() {
 
     self.events.push({
         eventId: 1,
-        eventDate: "10.9.15",
-        eventType: "Upcoming Event",
-        eventDescription: "This is a blurb designed to catch the readers interest and make them want to read the news story it describes.",
-        eventAction: "Read More | RSVP"
-    });
-
-    self.events.push({
-        eventId: 2,
-        eventDate: "10.10.15",
-        eventType: "Something Happened",
-        eventDescription: "This is a blurb designed to catch the readers interest and make them want to read the news story it describes.",
-        eventAction: "Read More"
-    });
-
-    self.events.push({
-        eventId: 3,
-        eventDate: "10.11.15",
-        eventType: "Something Happened",
-        eventDescription: "This is a blurb designed to catch the readers interest and make them want to read the news story it describes.",
-        eventAction: "Read More"
-    });
-
-    self.events.push({
-        eventId: 4,
-        eventDate: "10.12.15",
-        eventType: "Something Happened",
-        eventDescription: "This is a blurb designed to catch the readers interest and make them want to read the news story it describes.",
-        eventAction: "Read More"
-    });
-
-    self.events.push({
-        eventId: 5,
-        eventDate: "10.13.15",
-        eventType: "Upcoming Event",
-        eventDescription: "This is a blurb designed to catch the readers interest and make them want to read the news story it describes.",
-        eventAction: "Read More | RSVP"
+        eventDate: "2.25.17",
+        eventTitle: "2nd Annual Support Blue 5k/10k",
+        eventDescription: "Join us at Woodward Park to show your support for the men and women in blue who keep our city safe. Medals will be awarded.",
+        eventImg: "wwwroot/images/SBRUN2016/14.JPG",
+        eventActionTitle: "Sign Up",
+        eventAction: "https://runsignup.com/Race/CA/Fresno/SupportBlue"
     });
 }
 
@@ -739,8 +709,8 @@ $(document).ready(function() {
     ko.applyBindings(galleryVM, $("#gallery")[0]);
     var involvementVM = new InvolvementViewModel();
     ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
-    //var eventsVM = new EventsViewModel();
-    //ko.applyBindings(eventsVM, $("#events")[0]);
+    var eventsVM = new EventsViewModel();
+    ko.applyBindings(eventsVM, $(".events")[0]);
     hohVM = new HOHSignupViewModel();
     ko.applyBindings(hohVM, $(".section1")[0]);
 

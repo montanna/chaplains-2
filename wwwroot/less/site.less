@@ -734,7 +734,15 @@ input {
 
 /*News and Events*/
 
-.events {}
+.events {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.event {
+    text-align: left;
+    flex: 0 1 auto;
+}
 
 #news {
     background: @white;
@@ -762,7 +770,8 @@ input {
 }
 
 .news-events-container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .event-image-container {
@@ -784,6 +793,7 @@ input {
     height: 100%;
     padding: 15px;
     background: #4a4a4a;
+    background-size: cover;
 }
 
 .bottom-event-link {

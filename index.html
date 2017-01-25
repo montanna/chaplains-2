@@ -330,35 +330,26 @@
                 <p>Purchase Granville Tickets Now!</p>
             </a>
         </div>
-        <h4>
-            News and Events coming soon!
-        </h4>
-        <!--
-        <div class="news-events-container" id="events">
-            <div class="col-sm-6 events">
-                <ul class="events-list" data-bind="foreach: events">
-                    <li>
-                        <div class="row event-type">
-                            <span data-bind="text: eventType"></span> <span data-bind="text: eventDate"></span>
-                        </div>
-                        <div class="col-sm-4 event-image-container">
-                            <div class="event-image"></div>
-                        </div>
-                        <div class="col-sm-8 paragraph-container">
-                            <p data-bind="text: eventDescription"></p>
-                            <p class="bottom-event-link" data-bind="text: eventAction"></p>
-                        </div>
-                        <div class="row share-button-container">
-                            <div class="share-event-button btn btn-primary btn-sm">Facebook</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <ul></ul>
+        <div class="news-events-container">
+            <div class="col-sm-6 col-sm-offset-3 events" data-bind="foreach: events">
+                <div class="event">
+                    <div class="col-sm-12 event-heading">
+                        <h4 style="text-align: left;"><strong data-bind="text: eventTitle"></strong> | <span data-bind="text: eventDate"></span></h4>
+                    </div>
+                    <div class="col-sm-4 event-image-container">
+                        <div class="event-image" data-bind="style: {backgroundImage: 'url(' + eventImg + ')'}"></div>
+                    </div>
+                    <div class="col-sm-8 paragraph-container">
+                        <p data-bind="text: eventDescription"></p>
+                        <!--<p class="bottom-event-link" data-bind="text: eventAction"></p>-->
+                    </div>
+                    <div class="col-sm-12 share-button-container">
+                        <div class="btn btn-primary btn-sm" data-bind="text: eventActionTitle, attr: {href: eventAction}" target="_blank"></div>
+                    </div>
+                    <hr/>
+                </div>
             </div>
         </div>
-        -->
     </section>
     <!--contact section-->
     <section class="page-section section6" id="contact">
