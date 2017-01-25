@@ -463,7 +463,7 @@ function EventsViewModel() {
         eventDate: "2.25.17",
         eventTitle: "2nd Annual Support Blue 5k/10k",
         eventDescription: "Join us at Woodward Park to show your support for the men and women in blue who keep our city safe. Medals will be awarded.",
-        eventImg: "wwwroot/images/SBRUN2016/14.JPG",
+        eventImg: "wwwroot/images/SBRun2016/14.JPG",
         eventActionTitle: "Sign Up",
         eventAction: "https://runsignup.com/Race/CA/Fresno/SupportBlue"
     });
