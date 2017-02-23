@@ -708,7 +708,7 @@ $(document).ready(function() {
     var galleryVM = new GalleryViewModel();
     ko.applyBindings(galleryVM, $("#gallery")[0]);
     var involvementVM = new InvolvementViewModel();
-    ko.applyBindings(involvementVM, $("#involvementContainer")[0]);
+    ko.applyBindings(involvementVM, $(".section4")[0]);
     var eventsVM = new EventsViewModel();
     ko.applyBindings(eventsVM, $(".events")[0]);
     hohVM = new HOHSignupViewModel();
