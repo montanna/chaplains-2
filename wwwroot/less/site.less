@@ -18,9 +18,11 @@
 @riseViolet: #6F3398;
 @darkGrey: #2C2C2C;
 @lightGrey: #808080;
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    max-width:100vw!important;
     overflow-x: hidden !important;
     font-family: "PT Sans", Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -1350,5 +1352,15 @@ img.col6 {
     .middle-container {
         height: unset;
         width: unset;
+    }
+    /*PopUp fixes*/
+    .HOHPopUp, .getInvolvedPopUp{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 50px; /*the nav bar is 50px tall so this should position the popup just below it*/
+        left: 0;
+        margin: 0;
+            padding: 25px;
     }
 }

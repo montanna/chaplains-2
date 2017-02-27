@@ -31,6 +31,7 @@ function HOHSignupViewModel() {
     self.openPopUp = function() {
         //open popup
         $(".HOHPopUp").show();
+
     }
     self.closeHOH = function() {
         $(".HOHPopUp").hide();
@@ -290,6 +291,10 @@ function TabViewModel() {
 }
 
 //Gallery
+/*The way this works is a bit convoluted and may someday be replaced with something easier to use.
+  Images must be placed into a folder under wwwroot/images and numbered beginning with 1. All images must be .jpg files.
+  Using numeric file names makes it easy to create a link to the image and navigate between images.
+  */
 var album = function(item) {
     var self = this;
     self.albumTitle = item.albumTitle || "";
@@ -297,6 +302,13 @@ var album = function(item) {
     self.albumColor = item.albumColor || "";
     self.albumLength = item.albumLength || 0;
     self.albumImages = ko.observableArray([]);
+
+    //This function creates an array of paths for each image in the folder.
+    //The number of images must be known.
+    //Parameters:
+    //     folder: string - the name of the album's folder
+    //     len: integer - the number of files in the folder
+    //Note: we're counting from 1 here, not 0. (Yeah I know)
     self.getImages = function(folder, len) {
         var tmpArray = [];
         for (var i = 1; i <= len + 1; i++) {
@@ -350,9 +362,9 @@ function GalleryViewModel() {
         var urlEnd = url.substring(url.length - 6, url.length - 1);
         var index = -1;
         if (isNaN(parseInt(urlEnd.charAt(0)))) urlEnd = urlEnd.substring(1, urlEnd.length - 1); //check to see if we've accidentally included the slash
-        if (isNaN(parseInt(urlEnd.charAt(1)))) { //check to see if the second character is the .
+        if (isNaN(parseInt(urlEnd.charAt(1)))) { //check to see if the second character is the ., meaning we are on a single digit number
             index = parseInt(urlEnd.charAt(0));
-        } else {
+        } else { // if we aren't on a single digit number, this assumes we are on a two-digit number. 
             index = parseInt(urlEnd.substring(0, 2));
         }
         if ($(this).is(".galleryLeft") && index > 1) index--;
@@ -373,12 +385,13 @@ function GalleryViewModel() {
     })
 }
 
-var VolunteerSignee = function(first, last, email, phone) {
+var Volunteer = function(first, last, email, phone, group) {
     var self = this;
     self.first = first;
     self.last = last;
     self.email = email;
     self.phone = phone;
+    self.group = group;
 }
 
 //Get involved cards
@@ -421,17 +434,12 @@ function InvolvementViewModel() {
     self.state = ko.observable("State");
     self.church = ko.observable("Church affiliation");
 
-    self.onSubmit = function() {
-        var name = self.firstName();
-        alert(name);
-    };
+    self.selectedCard = ko.observable(self.cards()[0]);
 
-
-    self.closePopUp2 = function() {
-        console.log("close");
-        $(".PopUpBkg").hide();
-
-    };
+    self.selectCard = function(event, target){
+        self.selectedCard(event);
+        self.openPopUp();
+    }
 
     self.VolunteerList = firebase.database().ref('VolunteerList');
 
@@ -442,12 +450,45 @@ function InvolvementViewModel() {
     self.closePopUp = function() {
         $(".getInvolvedPopUp").hide();
     }
+
+/*Send an email containing the new volunteer's contact info to the right people at the chaplaincy.*/
     self.submit = function() {
-        self.curInfo = new VolunteerSignee(self.firstName(), self.lastName(), self.email(), self.phone());
+        /*Make a new volunteer object.*/
+        self.curInfo = new Volunteer(self.firstName(), self.lastName(), self.email(), self.phone(), self.selectedCard().cardTitle);
+        /*Push the new volunteer to Firebase.*/
         self.VolunteerList.push(self.curInfo);
+        /*Confirmation because I'm paranoid about these things.*/
         console.log("New entry added to volunteer list.");
+
         self.closePopUp();
-        emailjs.send("default_service", "volunteersignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
+
+        self.template = "";
+        /*The selectedCard is the outreach program that the user clicked on.
+          Get the title from that and set self.group accordingly.
+          After the switch, self.template is given to emailjs.send as a parameter. 
+          This way the right people at the chaplaincy get the email and it is specifically
+          designed for each group.*/
+
+        switch (self.selectedCard().cardTitle){
+            case "Patrol Chaplains":
+                self.template = "patrolsignup";
+                break;
+            case "Project RISE":
+                self.template = "risesignup";
+                break;
+            case "Project STEALTH":
+                self.template = "stealthsignup";
+                break;
+            case "Zone Ministries":
+                self.template = "zonesignup";
+                break;
+            default:
+                console.log("Volunteer signup error.")
+        }
+
+        /*Sends an email without needing any serverside code. Hooray*/
+        /*Parameters: The email service to use from email js / The template to use from email js / {the variable parameters specified in the template : their new values }*/
+        emailjs.send("default_service", self.template, { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
 
     }
 }
