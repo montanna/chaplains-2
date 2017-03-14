@@ -1,4 +1,4 @@
-﻿//set up firebase
+//set up firebase
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyAKypRvUnUzE6XmUIXCOIe4Al2x2Xd593s",
@@ -303,7 +303,7 @@ var album = function(item) {
     self.albumLength = item.albumLength || 0;
     self.albumImages = ko.observableArray([]);
 
-    //This function creates an array of paths for each image in the folder.
+    //This function creates an array of paths, one for each image in the folder.
     //The number of images must be known.
     //Parameters:
     //     folder: string - the name of the album's folder
