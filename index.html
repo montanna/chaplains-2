@@ -117,7 +117,6 @@
             <img id="scrollButton" src="wwwroot/images/arrow-icon2.png" />
         </div>
         <div class="HOHPopUp wt">
-        <div class="close" data-bind="click: function(){$root.closeHOH()}">X</div>
         <h4 class=mont>Thanks for your interest!</h4>
         <p>Please leave us your name and email and/or phone number and we'll get in touch as soon as we can.</p>
             <div class="form-group text-center">
@@ -129,6 +128,10 @@
 
             <div class="btn btn-warning" style="margin:10px" data-bind="click: function(){$root.submit();}">Submit</div>
             </div>
+            <div class="confirm overlay">
+                <img src="wwwroot/images/check-icon.png" class="confirm"/>
+            </div>
+        <div class="close" data-bind="click: function(){$root.closeHOH()}">X</div>
         </div>
     </section>
     <!--outreach page (formerly ministries)-->

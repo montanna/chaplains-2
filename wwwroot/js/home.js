@@ -40,8 +40,9 @@ function HOHSignupViewModel() {
         self.curInfo = new HOHSignee(self.firstName(), self.lastName(), self.email(), self.phone());
         self.HOHList.push(self.curInfo);
         console.log("New entry added to HOH list.");
-        self.closeHOH();
         emailjs.send("default_service", "hohsignup", { name: self.firstName() + " " + self.lastName(), email: self.email(), phone: self.phone() });
+        $(".confirm").addClass("animated fadeIn");
+        $(".confirm").show();
 
     }
 }
@@ -124,7 +125,7 @@ function TabViewModel() {
     // initialize the array of tabs
     self.tabs.push({
         tabId: 1,
-        tabStyle: "riseLink ",
+        tabStyle: "riseLink selectedTab",
         tabTitle: "Project RISE - On Campus",
         tabCaption: "<img src='wwwroot/images/rise-logo-white.png' style='height: 20vh; -webkit-filter: drop-shadow(4px 4px 2px #222); filter: drop-shadow(4px 4px 2px #222);'/> ",
         tabImg: "wwwroot/images/school4.jpg",
@@ -436,7 +437,7 @@ function InvolvementViewModel() {
 
     self.selectedCard = ko.observable(self.cards()[0]);
 
-    self.selectCard = function(event, target){
+    self.selectCard = function(event, target) {
         self.selectedCard(event);
         self.openPopUp();
     }
@@ -451,7 +452,7 @@ function InvolvementViewModel() {
         $(".getInvolvedPopUp").hide();
     }
 
-/*Send an email containing the new volunteer's contact info to the right people at the chaplaincy.*/
+    /*Send an email containing the new volunteer's contact info to the right people at the chaplaincy.*/
     self.submit = function() {
         /*Make a new volunteer object.*/
         self.curInfo = new Volunteer(self.firstName(), self.lastName(), self.email(), self.phone(), self.selectedCard().cardTitle);
@@ -469,7 +470,7 @@ function InvolvementViewModel() {
           This way the right people at the chaplaincy get the email and it is specifically
           designed for each group.*/
 
-        switch (self.selectedCard().cardTitle){
+        switch (self.selectedCard().cardTitle) {
             case "Patrol Chaplains":
                 self.template = "patrolsignup";
                 break;

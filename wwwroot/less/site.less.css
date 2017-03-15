@@ -173,22 +173,22 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 .close:hover {
   cursor: pointer;
 }
 .HOHPopUp {
   display: none;
-  position: fixed;
   background-color: #4ab1d8;
   width: 500px;
   max-width: 100%;
   height: 320px;
-  top: 50%;
-  left: 50%;
-  margin-top: -160px;
-  /* Negative half of height. */
-  margin-left: -250px;
-  /* Negative half of width. */
+  position: relative;
+  margin: 0 auto;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.55);
@@ -204,6 +204,22 @@ a:hover {
 }
 .HOHPopUp.close:hover {
   cursor: pointer;
+}
+.confirm {
+  display: none;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: inherit;
 }
 /*Navbar styling*/
 .navbar-trans {
@@ -535,17 +551,12 @@ form {
 /*Get involved page styling*/
 .getInvolvedPopUp {
   display: none;
-  position: fixed;
   background-color: #4ab1d8;
   width: 500px;
   max-width: 100%;
   height: 320px;
-  top: 50%;
-  left: 50%;
-  margin-top: -160px;
-  /* Negative half of height. */
-  margin-left: -250px;
-  /* Negative half of width. */
+  position: relative;
+  margin: 0 auto;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.55);
@@ -799,8 +810,11 @@ img.col6 {
   text-align: center;
   color: #fff;
   font-size: 1.15em;
-  cursor: pointer;
   flex: 1;
+  transition: all 0.2s ease;
+}
+.ministriesLink:hover {
+  cursor: pointer;
 }
 .stealthLink {
   background-color: #E24743 !important;
@@ -808,6 +822,9 @@ img.col6 {
 }
 .stealthLink.popUpHeaderBar {
   box-shadow: 0px 0px 150px #E24743;
+}
+.stealthLink.ministriesLink:hover {
+  background: #bc211d !important;
 }
 .stealthBtn {
   box-shadow: 0px 4px 0px #bc211d;
@@ -831,11 +848,17 @@ img.col6 {
 .deptLink.popUpHeaderBar {
   box-shadow: 0px 0px 150px #123456;
 }
+.deptLink.ministriesLink:hover {
+  background: #050e17 !important;
+}
 .commLink {
   background-color: #D97C30 !important;
 }
 .commLink.popUpHeaderBar {
   box-shadow: 0px 0px 150px #D97C30;
+}
+.commLink.ministriesLink:hover {
+  background: #9f581d !important;
 }
 .riseLink {
   background-color: #6F3398 !important;
@@ -844,11 +867,17 @@ img.col6 {
 .riseLink.popUpHeaderBar {
   box-shadow: 0px 0px 150px #6F3398;
 }
+.riseLink.ministriesLink:hover {
+  background: #45205f !important;
+}
 .blueLink {
   background-color: #091a2c !important;
 }
 .blueLink.popUpHeaderBar {
   box-shadow: -40px 40px 150px #123456;
+}
+.blueLink.ministriesLink:hover {
+  background: #000102 !important;
 }
 .carousel-caption {
   position: absolute;
