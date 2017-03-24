@@ -1099,6 +1099,9 @@ img.col6 {
   #ministriesLinks {
     margin-top: -30px;
   }
+  .navbar-collapse {
+    max-height: 50px;
+  }
 }
 /*For smaller screens / mobile */
 @media (max-width: 900px) {

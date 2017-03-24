@@ -513,6 +513,7 @@ function EventsViewModel() {
 
 function initControls() {
 
+
     $(".homeLink").on("click", function() {
         $("html,body").animate({
             scrollTop: $("#home").offset().top - 50
