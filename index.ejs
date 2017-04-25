@@ -254,7 +254,7 @@
                 </div>
             </div>
             <div class="PopUpBkg">
-                <div class="popUp">
+                <div class="popUp" data-bind="css: $root.selectedCard().cardColor">
                     <div class="popUpHeaderBar">
                         <span class="popUpHeader">Volunteer Application</span>
                         <span class="popUpCloseBTN glyphicon glyphicon-remove-circle pull-right" id="involvementPopUpClose" data-bind="click: function(data,event) { closePopUp2(data,event)}"></span>
