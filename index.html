@@ -102,7 +102,7 @@
             </h4>
             </div>
         </div>
-        <div class="homeBanner wt">
+        <!-- <div class="homeBanner wt">
             <div class="text-center col-sm-6">
                 <h3 class="mont">HOME OF HOPE TICKETS ON SALE NOW</h2>
                 <h4 class="mont">GRAND PRIZE DRAWING WEDNESDAY, MAY 3, 2017 | TWO-TICKET BUNDLE DRAWING WEDNESDAY, APRIL 26, 2017</h4>
@@ -113,25 +113,25 @@
             </div>
             <div class="col-sm-6 homeImg"></div>
         </div>
+        -->
         <div class="animated" id="scroll-button-row">
             <img id="scrollButton" src="wwwroot/images/arrow-icon2.png" />
         </div>
         <div class="HOHPopUp wt">
-        <h4 class=mont>Thanks for your interest!</h4>
-        <p>Please leave us your name and email and/or phone number and we'll get in touch as soon as we can.</p>
+            <h4 class=mont>Thanks for your interest!</h4>
+            <p>Please leave us your name and email and/or phone number and we'll get in touch as soon as we can.</p>
             <div class="form-group text-center">
-            <input type="firstName" data-bind="value: $root.firstName" placeholder="First name">
-            <input type="lastName" data-bind="value: $root.lastName" placeholder="Last name">
-            <input type="email" data-bind="value: $root.email" placeholder="Email">
-            <input type="phone" data-bind="value: $root.phone" placeholder="Phone">
-<br>
-
-            <div class="btn btn-warning" style="margin:10px" data-bind="click: function(){$root.submit();}">Submit</div>
+                <input type="firstName" data-bind="value: $root.firstName" placeholder="First name">
+                <input type="lastName" data-bind="value: $root.lastName" placeholder="Last name">
+                <input type="email" data-bind="value: $root.email" placeholder="Email">
+                <input type="phone" data-bind="value: $root.phone" placeholder="Phone">
+                <br>
+                <div class="btn btn-warning" style="margin:10px" data-bind="click: function(){$root.submit();}">Submit</div>
             </div>
             <div class="confirm overlay">
-                <img src="wwwroot/images/check-icon.png" class="confirm"/>
+                <img src="wwwroot/images/check-icon.png" class="confirm" />
             </div>
-        <div class="close" data-bind="click: function(){$root.closeHOH()}">X</div>
+            <div class="close" data-bind="click: function(){$root.closeHOH()}">X</div>
         </div>
     </section>
     <!--outreach page (formerly ministries)-->
@@ -145,8 +145,8 @@
                 <div id="ministriesCarousel" data-bind="style: {background:'rgba(93, 69, 28, 0.25) url(' + $root.selectedTab().tabImg + ') center center no-repeat'}">
                     <h1 class="carouselCaption wt" data-bind="html: $root.selectedTab().tabTitle"></h1>
                     <h3 class="carouselCaption  carouselCaption2" data-bind="html: $root.selectedTab().tabCaption"></h3>
+                </div>
             </div>
-        </div>
         </div>
         <div id="ministriesContainer">
             <div class="row">
