@@ -633,6 +633,31 @@ input {
   margin-top: 50px;
   margin-right: 30px;
 }
+/*Styling for the confirmation popup*/
+svg {
+  height: 100%;
+  width: 100%;
+}
+.check {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.animateCheckPath {
+  animation: draw 3s ease-in forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 /*News and Events*/
 .events {
   text-align: left;

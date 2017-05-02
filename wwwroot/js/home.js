@@ -458,10 +458,7 @@ function InvolvementViewModel() {
         self.curInfo = new Volunteer(self.firstName(), self.lastName(), self.email(), self.phone(), self.selectedCard().cardTitle);
         /*Push the new volunteer to Firebase.*/
         self.VolunteerList.push(self.curInfo);
-        /*Confirmation because I'm paranoid about these things.*/
-        console.log("New entry added to volunteer list.");
 
-        self.closePopUp();
 
         self.template = "";
         /*The selectedCard is the outreach program that the user clicked on.
@@ -486,6 +483,11 @@ function InvolvementViewModel() {
             default:
                 console.log("Volunteer signup error.")
         }
+
+        $(".form-group").addClass("animated fadeOut");
+        $(".check").show();
+        var path = document.getElementById("checkPath");
+        path.classList += " animateCheckPath";
 
         /*Sends an email without needing any serverside code. Hooray*/
         /*Parameters: The email service to use from email js / The template to use from email js / {the variable parameters specified in the template : their new values }*/
