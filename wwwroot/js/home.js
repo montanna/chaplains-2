@@ -426,14 +426,14 @@ function InvolvementViewModel() {
 
     });
 
-    self.firstName = ko.observable("First name");
-    self.lastName = ko.observable("Last name");
-    self.email = ko.observable("Email");
-    self.phone = ko.observable("Phone");
-    self.address = ko.observable("Address");
-    self.city = ko.observable("City");
-    self.state = ko.observable("State");
-    self.church = ko.observable("Church affiliation");
+    self.firstName = ko.observable("");
+    self.lastName = ko.observable("");
+    self.email = ko.observable("");
+    self.phone = ko.observable("");
+    self.address = ko.observable("");
+    self.city = ko.observable("");
+    self.state = ko.observable("");
+    self.church = ko.observable("");
 
     self.selectedCard = ko.observable(self.cards()[0]);
 
